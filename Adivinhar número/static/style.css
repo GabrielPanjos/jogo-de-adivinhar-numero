@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(52, 64, 97);
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+#inicio {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#inicio>button,
+#inicio>h1 {
+    margin-top: 100px;
+}
+
+#inicio>h1 {
+    font-size: 200px;
+    width: 1200px;
+    text-align: center;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+#inicio>button {
+    color: rgb(52, 64, 97);
+    font-size: 30px;
+    font-weight: 600;
+    border: none;
+    width: 350px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.btn-hover:hover {
+    background-color: rgb(201, 200, 200);
+}
+
+#jogo {
+    font-weight: 700;
+}
+
+#turnos {
+    padding: 50px 0 50px 0;
+    text-align: center;
+    font-size: 80px;
+}
+
+#dica {
+    display: flex;
+    justify-content: space-between;
+    font-size: 150px;
+}
+
+#dica>div {
+    text-align: center;
+    width: 350px;
+}
+
+#adivinhar {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    color: rgb(52, 64, 97);
+    font-size: 30px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+}
+
+#adivinhar>button {
+    font-size: 40px;
+    width: 400px;
+    height: 150px;
+}
+
+#numeros {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.btn-numero {
+    font-size: 100px;
+    height: 150px;
+    width: 150px;
+}
+
+#apagar {
+    font-size: 40px;
+    height: 150px;
+    width: 150px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhar Número</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <section id="inicio" style="display: none;">
+
+        <h1 class="cursor-default">ADIVINHE O NÚMERO</h1>
+
+        <button id="start" class="cursor-pointer btn-hover">COMEÇAR</button>
+
+    </section>
+
+    <section id="jogo" style="display: block;">
+
+        <div id="turnos">0 TURNOS</div>
+
+        <div id="dica">
+
+            <div id="menor">1</div>
+
+            <div>≺</div>
+
+            <div id="palpite">?</div>
+
+            <div>≺</div>
+
+            <div id="maior">1000</div>
+
+        </div>
+
+        <div id="adivinhar">
+            <button class="btn-hover cursor-pointer">ADIVINHE</button>
+        </div>
+
+        <div id="numeros">
+            <button id="1" class="btn-hover cursor-pointer btn-numero">1</button>
+            <button id="2" class="btn-hover cursor-pointer btn-numero">2</button>
+            <button id="3" class="btn-hover cursor-pointer btn-numero">3</button>
+            <button id="4" class="btn-hover cursor-pointer btn-numero">4</button>
+            <button id="5" class="btn-hover cursor-pointer btn-numero">5</button>
+            <button id="6" class="btn-hover cursor-pointer btn-numero">6</button>
+            <button id="7" class="btn-hover cursor-pointer btn-numero">7</button>
+            <button id="8" class="btn-hover cursor-pointer btn-numero">8</button>
+            <button id="9" class="btn-hover cursor-pointer btn-numero">9</button>
+            <button id="apagar" class="btn-hover cursor-pointer">apagar</button>
+        </div>
+
+    </section>
+
+    <script src="/static/main.js"></script>
+</body>
+
+</html>
