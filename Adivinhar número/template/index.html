@@ -10,7 +10,7 @@
 
 <body>
 
-    <section id="inicio" style="display: none;">
+    <section id="inicio" >
 
         <h1 class="cursor-default">ADIVINHE O NÚMERO</h1>
 
@@ -18,7 +18,7 @@
 
     </section>
 
-    <section id="jogo" style="display: block;">
+    <section id="jogo" style="display: none;">
 
         <div id="turnos">0 TURNOS</div>
 
@@ -53,6 +53,16 @@
             <button id="0" class="btn-hover cursor-pointer btn-numero">0</button>
             <button id="apagar" class="btn-hover cursor-pointer">apagar</button>
         </div>
+
+    </section>
+
+    <section id="final" style="display: none;">
+
+        <h1 class="cursor-default">MELHOR PONTUAÇÃO</h1>
+        
+        <div id="melhor-turno">0</div>
+
+        <button id="reiniciar" class="cursor-pointer btn-hover">REINICIAR</button>
 
     </section>
 
