@@ -6,6 +6,9 @@ const roletarNumero = function () {
 
 roletarNumero()
 
+
+let intervalo = false
+
 // sections
 const inicio = document.getElementById("inicio")
 const jogo = document.getElementById("jogo")
@@ -84,31 +87,29 @@ const removerNumero = function () {
 
 const adivinhar = function () {
 
-    if (valorAtual < numeroCerto && valorAtual > Number(menor.innerHTML)) {
-        console.log(numeroCerto)
+    if (!intervalo) {
+        if (valorAtual < numeroCerto && valorAtual > Number(menor.innerHTML)) {
 
-        menor.innerHTML = palpite.innerHTML
+            menor.innerHTML = palpite.innerHTML
 
-        valorAtual = ""
-        atualizarValorAtual()
-        atualizarTurno()
-    }
-    else if (valorAtual > numeroCerto && valorAtual < Number(maior.innerHTML)) {
-        console.log(numeroCerto)
+            valorAtual = ""
+            atualizarValorAtual()
+            atualizarTurno()
+        }
+        else if (valorAtual > numeroCerto && valorAtual < Number(maior.innerHTML)) {
 
-        maior.innerHTML = palpite.innerHTML
+            maior.innerHTML = palpite.innerHTML
 
-        valorAtual = ""
-        atualizarValorAtual()
-        atualizarTurno()
-    }
-    else if (valorAtual == numeroCerto) {
+            valorAtual = ""
+            atualizarValorAtual()
+            atualizarTurno()
+        }
+        else if (valorAtual == numeroCerto) {
 
-        console.log('ACERTOU')
-
-        atualizarValorAtual()
-        atualizarTurno()
-        terminarJogo()
+            atualizarValorAtual()
+            atualizarTurno()
+            terminarJogo()
+        }
     }
 }
 
@@ -124,8 +125,6 @@ let melhorPontuacao = localStorage.getItem("melhorPontuacao") || 0
 
 const salvarPontuacao = function () {
 
-    console.log('foi')
-
     const novaPontuacao = new MelhorPontuacao(quantidadeTurnos)
     melhoresPontuacoes.push(novaPontuacao)
 
@@ -138,18 +137,21 @@ const salvarPontuacao = function () {
 
 const terminarJogo = function () {
 
-    if (melhorTurno.innerHTML == 0) {
-        salvarPontuacao()
-    }
-    else if (quantidadeTurnos < melhorTurno.innerHTML) {
+    const melhorTurnoNumero = Number(melhorPontuacao) || 0
+
+    if (melhorTurnoNumero == 0 || quantidadeTurnos < melhorTurnoNumero) {
         salvarPontuacao()
     }
 
+    intervalo = true
+
     setTimeout(() => {
+        intervalo = false
+
         final.style.display = ""
         jogo.style.display = "none"
 
-        melhorTurno.innerHTML = Number(melhorPontuacao)
+        melhorTurno.innerHTML = Number(melhorPontuacao) + " Turnos"
     }, 3000);
 }
 
@@ -160,13 +162,14 @@ const reiniciarJogo = function () {
     jogo.style.display = ""
 
     quantidadeTurnos = 0
+    turnos.innerHTML = quantidadeTurnos + " TURNOS"
     valorAtual = ""
 
     maior.innerHTML = 1000
     menor.innerHTML = 1
 
     roletarNumero()
-
-    atualizarTurno()
     atualizarValorAtual()
 }
+
+console.log(numeroCerto)
